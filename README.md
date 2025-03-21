@@ -1,7 +1,7 @@
 <H3>ENTER YOUR NAME : B.Sanjay Kumar</H3>
-<H3>ENTER YOUR REGISTER NO.</H3>
+<H3>ENTER YOUR REGISTER NO.: 212223220095</H3>
 <H3>EX. NO.1</H3>
-<H3>DATE</H3>
+<H3>DATE:07.03.2025</H3>
 <H1 ALIGN =CENTER> Introduction to Kaggle and Data preprocessing</H1>
 
 ## AIM:
@@ -37,11 +37,48 @@ STEP 5:Normalizing the data<BR>
 STEP 6:Splitting the data into test and train<BR>
 
 ##  PROGRAM:
-TYPE YOUR CODE HERE
+import pandas as pd                                                 # Importing Libraries
+import io
+from sklearn.preprocessing import StandardScaler
+from sklearn.preprocessing import MinMaxScaler
+from sklearn.model_selection import train_test_split
+df=pd.read_csv("Churn_Modelling.csv",index_col="RowNumber")         # Read the dataset from drive
+df.head()
+
+df.isnull().sum()                                                   # Finding Missing Values
+
+df.duplicated().sum()                                               # Check For Duplicates
+
+df=df.drop(['Surname', 'Geography','Gender'], axis=1)               # Remove Unnecessary Columns
+scaler=StandardScaler()                                             # Normalize the dataset
+df=pd.DataFrame(scaler.fit_transform(df))
+df.head()
+
+X,Y=df.iloc[:,:-1].values ,df.iloc[:,-1].values                     # Split the dataset into input and output
+print('Input:\n',X,'\nOutput:\n',Y) 
+Xtrain,Xtest,Ytrain,Ytest = train_test_split(X, Y, test_size=0.2)   # Splitting the data for training & Testing
+print("Xtrain:\n" ,Xtrain, "\nXtest:\n", Xtest)                     # X Train and Test
+print("\nYtrain:\n" ,Ytrain, "\nYtest:\n", Ytest)                   # Y Train and Test
+
 
 
 ## OUTPUT:
-SHOW YOUR OUTPUT HERE
+
+DATASET:
+![image](https://github.com/user-attachments/assets/05045341-1487-4c89-8c3c-2317367cedac)
+
+NULL VALUES:
+![image](https://github.com/user-attachments/assets/3a0ab941-c255-49ad-9fc3-83f007c60157)
+
+NORMALIZED DATA:
+![image](https://github.com/user-attachments/assets/e3d455fa-2d77-44ff-b315-b5ac4df6dd7a)
+
+DATA SPLITTING:
+![image](https://github.com/user-attachments/assets/edc729fb-7b1d-40f2-a0c4-1696e2319b17)
+
+TRAIN AND TEST DATA:
+![image](https://github.com/user-attachments/assets/5e5f3b90-0d2a-4431-83bd-4218f470cd6e)
+
 
 
 ## RESULT:
