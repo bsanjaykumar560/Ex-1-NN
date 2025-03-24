@@ -65,12 +65,10 @@ print("\nYtrain:\n" ,Ytrain, "\nYtest:\n", Ytest)                   # Y Train an
 ## OUTPUT:
 
 
-
 DATASET:
 
 
 ![image](https://github.com/user-attachments/assets/05045341-1487-4c89-8c3c-2317367cedac)
-
 
 
 NULL VALUES:
@@ -79,19 +77,16 @@ NULL VALUES:
 ![image](https://github.com/user-attachments/assets/3a0ab941-c255-49ad-9fc3-83f007c60157)
 
 
-
 NORMALIZED DATA:
 
 
 ![image](https://github.com/user-attachments/assets/e3d455fa-2d77-44ff-b315-b5ac4df6dd7a)
 
 
-
 DATA SPLITTING:
 
 
 ![image](https://github.com/user-attachments/assets/edc729fb-7b1d-40f2-a0c4-1696e2319b17)
-
 
 
 TRAIN AND TEST DATA:
